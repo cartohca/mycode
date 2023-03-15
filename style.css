@@ -17,7 +17,7 @@ footer{grid-area:footer;}
 .element{
     font: 900 20px"roboto",sans-serif;
     color:#ffffff;
-    background-color: blueviolet;
+    background-color: rgb(17, 18, 20);
     text-align: center;
     text-shadow: 4px 2px 0 black;
     border: 2px solid; 
