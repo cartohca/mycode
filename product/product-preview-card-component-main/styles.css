@@ -8,10 +8,11 @@
    
 }
 .item-1{
+background-image:url(image-product-desktop.jpg);
 width: 200px;
+height: 300px;
 border-radius: 10px 0px 0px 10px;
-position: relative;
-top:2px;
+background-size: cover;
 }
 .item-2{
     width: 200px;
