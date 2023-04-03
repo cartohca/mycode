@@ -44,3 +44,4 @@ function dragdrop(event){
 
     
 }
+console.log(42)
