@@ -4,6 +4,7 @@ const timeList=document.querySelector('#time-list')
 const timeEl=document.querySelector('#time')
 const board=document.querySelector('#board')
 const colors=['red','blue','green','Purple','orange']
+const restart=document.querySelector('.restart')
 let time=0
 let score=0
 
@@ -25,18 +26,15 @@ board.addEventListener('click',event=>{
         score++
         event.target.remove()
         createRandomCircle()
+       
     }
 })
 
 function startGame(){
-    setInterval(decreseTime,1000)
-    createRandomCircle()
-    setTime(time)
-}
-
-function decreseTime(){
+   var interval=setInterval(function decreseTime(){
     if(time===0){
         finishGame()
+        clearInterval(interval)
     }else{
 
     let current=--time
@@ -44,15 +42,23 @@ function decreseTime(){
         current=`0${current}`
     }
     setTime(current)}
+   },1000)
+    createRandomCircle()
+    setTime(time)
+    
 }
+
+
 
 function setTime(value){
     timeEl.innerHTML=`00:${value}`
 }
 
 function finishGame(){
-    timeEl.parentNode.classList.add('hide')
+    
     board.innerHTML=`<h1>Счёт: <span class="primary">${score}<span/><h1>`
+    restart.style.opacity=1
+    clearInterval(interval)
 
 }
 
@@ -90,3 +96,10 @@ function getRandomColor(){
     element.style.backgroundColor = color
     
 }
+
+restart.addEventListener('click',event=>{
+    
+    screens[1].classList.remove('up')
+    
+})
+
