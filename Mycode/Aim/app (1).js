@@ -8,11 +8,13 @@ const times = [10, 20, 30, 40]
 const restart = document.querySelector('.restart')
 
 let score=0
+let clicks=0
+let sum=0
 
 const handleStartBtnClick = (event) => {
     event.preventDefault()
     screens[0].classList.add('up')
-    startBtn.removeEventListener('click', handleStartBtnClick);
+    
 }
 
 startBtn.addEventListener('click', handleStartBtnClick);
@@ -44,6 +46,10 @@ board.addEventListener('click',event=>{
 })
 
 function startGame(time) {
+    restart.style.opacity='0'
+    score=0
+    clicks=0
+    sum=0
     let currentTime = time;
     const interval = setInterval(() => {
         if (currentTime === 0) {
@@ -65,9 +71,12 @@ function setTime(value){
 }
 
 function finishGame(interval) {
-    board.innerHTML=`<h1>Счёт: <span class="primary">${score}<span/><h1>`
-    restart.style.display= 'block';
+    
+    restart.style.opacity='1'
     clearInterval(interval)
+    sum=(score/clicks).toFixed(2)*100
+    board.innerHTML=`<h1>Счёт: <span class="primary">${score}<br>точность${sum}%<span/><h1>`
+    console.log(clicks)
 }
 
 function createRandomCircle(){
@@ -101,6 +110,10 @@ function getRandomColor(){
 restart.addEventListener('click',event=>{
     
     screens[1].classList.remove('up')
+    score=0
+    board.innerHTML=``
     
 })
+board.addEventListener('click',event=>{
+    clicks+=1})
 
