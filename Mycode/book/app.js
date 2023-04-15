@@ -1,2 +1,2 @@
-let errorMessage = `\\u2718 Test failure at ${filename}:${linenumber}:${exception.message}Stack trace:${exception.stack}`;
-console.log(errorMessage)
+let a=3
+console.log(a.toString().toUpperCase())
