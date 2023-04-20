@@ -4,6 +4,9 @@ let but3 = document.getElementById("bt3");
 let but4 = document.getElementById("bt4");
 let but5 = document.getElementById("bt5");
 let sumbit=document.getElementById("sumbit")
+let cont=document.getElementById("cont")
+let cont2=document.getElementById("cont2")
+let p=document.getElementById('p')
 let a=0;
 
 but1.addEventListener("click",test1);
@@ -63,15 +66,19 @@ function test5(){
 sumbit.addEventListener("click", sum);
 
 function sum(){
+    let s=0;
     if(but1.classList.contains("orange")){
-        alert(1)
+        s=1
     } else if(but2.classList.contains("orange")){
-        alert(2)
+        s=2
     } else if (but3.classList.contains("orange")){
-        alert(3)
+        s=3
     } else if (but4.classList.contains("orange")){
-        alert(4)
+        s=4
     } else if (but5.classList.contains("orange")){
-        alert(5)
+        s=5
     }
+cont.style.display="none"
+cont2.style.display="flex"
+p.innerHTML=`<p class=pop>You selected ${s} out of 5<p>`
 }

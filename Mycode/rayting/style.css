@@ -84,3 +84,29 @@ font-size: 20px;}
 .orange{
     background-color: orange;
 }
+
+.container2{
+    display: none;
+    flex-direction: column;
+    background-color: hsl(211, 26%, 16%);
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7%;
+    padding: 25px;
+    text-align: center;
+}
+
+.images{
+    align-items: self-start;
+}
+
+.pop{
+    font-family: Arial, Helvetica, sans-serif;
+    color:orange;
+    margin:20px;
+    padding: 8px 15px;
+    background-color: hsl(209, 26%, 21%);
+    border-radius:20px 20px;
+}
