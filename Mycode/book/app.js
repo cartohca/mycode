@@ -1,6 +1,8 @@
-let text = "Na па па па па па па па Batman!";
-let wordSet=new Set(text.split(" "));
-console.log(wordSet)
-let unique=[];
-unique.push(12, 123);
-console.log(unique)
+const a = document.querySelector('input')
+const b = document.querySelector('button')
+const c = document.querySelector('p')
+
+
+b.onclick = (el) => {localStorage.setItem('text',a.value)
+c.innerText = a.value}
+console.log(localStorage.getItem('text'))
